@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <title>Task Planner History</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+<div class="container">
+  <h1>Plan History</h1>
+  <a href="/" class="btn btn-outline-primary mb-3">New Plan</a>
+
+  {% if plans %}
+    <form action="/clear_history" method="post" class="mb-3">
+      <button class="btn btn-danger">Clear History</button>
+    </form>
+
+    <ul class="list-group">
+      {% for plan in plans %}
+        <li class="list-group-item">
+          <a href="/plan/{{ plan.id }}">{{ plan.goal_text }}</a> - {{ plan.created_at.strftime('%Y-%m-%d %H:%M') }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No history found.</p>
+  {% endif %}
+
+</div>
+</body>
+</html>
