@@ -19,6 +19,7 @@
 
 **Workflow Diagram (conceptual):**  
 
+**User Goal → LLM (Gemini) → Enrich with Web & Weather API → Structured Day-by-Day Plan → Save in DB → Web Interface**
 
 ---
 
@@ -60,6 +61,12 @@
 
 ---
 
+## Demo
+
+**Google Drive Link**: [Demo Video](https://drive.google.com/file/d/1oq6qeZMYIlgFYhMfP5Z6TeUYCAvZO1Jb/view?usp=sharing)
+
+---
+
 ## Technology Used
 
 - **Python** – Backend and AI integration  
@@ -75,7 +82,50 @@
 
 ## Setup & Installation
 
-1. **Clone the repository**  
-```bash
-git clone https://github.com/sandalinatekarr/task-planner-agent.git
-cd task-planner-agent
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/sandalinatekarr/task-planner-agent.git
+    cd task-planner-agent
+    ```
+
+2. **Create and activate a virtual environment**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # Mac/Linux
+    venv\Scripts\activate     # Windows
+    ```
+
+3. **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+ 
+4. **Set environment variables**
+    ```bash
+    export SERPAPI_API_KEY="your_serpapi_key"
+    export GOOGLE_API_KEY="your_google_gemini_key"
+    export OPENWEATHER_API_KEY="your_openweather_key"
+    ```
+
+5. **Run the app**
+    ```bash
+    python app.py
+    ```
+
+6. **Open in browser**
+    ```
+    http://127.0.0.1:5050
+    ```
+
+---
+
+## AI Help Disclosure
+
+- **AI used:** Google Gemini is used to generate plans from natural language goals.  
+- **External APIs:** SerpAPI and OpenWeather are used to enrich the generated content with web search results and weather data.
+
+---
+
+## License
+
+MIT License
