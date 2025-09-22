@@ -17,6 +17,9 @@
    - View generated plans  
    - Browse past plans (history)  
 
+
+---
+
 **Workflow Diagram (conceptual):**  
 
 **User Goal → LLM (Gemini) → Enrich with Web & Weather API → Structured Day-by-Day Plan → Save in DB → Web Interface**
@@ -129,3 +132,4 @@
 ## License
 
 MIT License
+
